@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bellevue Square — From Fields to Urban Core</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#050816" />
+</head>
+<body>
+    <div id="scrollProgress"></div>
+
+
+  <!-- Background blobs -->
+  <div class="bg-blobs" aria-hidden="true">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header glass">
+    <div class="header__inner">
+      <a href="#top" class="brand">
+        <span class="brand__dot"></span>
+        <span class="brand__text">
+          <span class="brand__title">Bellevue Square</span>
+          <span class="brand__subtitle">From Strawberry Fields to Urban Core</span>
+        </span>
+      </a>
+      <nav class="nav">
+        <a href="#rq">RQ</a>
+        <a href="#themes">Themes</a>
+        <a href="#skills">Skills</a>
+        <a href="#narrative">Narrative</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#cause-effect">Cause → Effect</a>
+        <a href="#refs">Sources</a>
+        <button id="themeToggle" class="btn-ghost">Light theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="section hero">
+      <div class="container hero__grid glass">
+
+        <div class="hero__copy">
+          <h1>
+            <span class="serif">How a Mall</span>
+            <span class="sans">Tells the Story of Postwar America</span>
+          </h1>
+
+          <p class="lead">
+            How did the opening and growth of Bellevue Square Mall reflect larger changes in American suburban life,
+            consumer culture, and urban development after World War II?
+          </p>
+
+          <div class="hero__actions">
+            <a href="#rq" class="btn">Start with the Research Question</a>
+            <a href="#timeline" class="btn-outline">Timeline</a>
+          </div>
+
+          <dl class="hero-facts">
+            <div>
+              <dt>Time frame</dt>
+              <dd>1910s–2020s</dd>
+            </div>
+            <div>
+              <dt>Location</dt>
+              <dd>Bellevue, Washington</dd>
+            </div>
+            <div>
+              <dt>Themes</dt>
+              <dd>Suburbs · Culture · Urban Growth</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- BEFORE/AFTER SLIDER -->
+        <div class="before-after">
+          <img src="images/farmland.jpg" alt="Farmland before development" />
+          <div class="before-after__clip" id="baClip">
+            <img src="images/skyline.jpg" alt="Modern Bellevue Skyline" />
+          </div>
+
+          <input id="baRange" class="before-after__range" type="range" min="0" max="100" value="50" />
+
+          <div class="before-after__label before">Skyline (After)</div>
+          <div class="before-after__label after">Farmland (Before)</div>
+        </div>
+
+      </div>
+      <div class="scroll-indicator"><span></span>Scroll</div>
+    </section>
+
+    <!-- RQ -->
+    <section id="rq" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section__title">Research Question</h2>
+      <p class="section__tag">Guiding Inquiry</p>
+    </div>
+
+    <div class="grid-2">
+      <article class="card glass">
+        <p class="rq-label">Core Question</p>
+        <p>
+          How did the opening and growth of Bellevue Square Mall reflect larger changes in American suburban life,
+          consumer culture, and urban development after World War II?
+        </p>
+      </article>
+
+      <article class="card glass rq-card--notes">
+        <p class="rq-label">Why This Question Works</p>
+        <ul class="rq-list">
+          <li>Clear and specific but open-ended, it cannot be answered with “yes” or “no.”</li>
+          <li>Connects local Bellevue history to national postwar trends in suburbs, consumer culture, and urban growth.</li>
+          <li>Allows multiple interpretations supported by primary and secondary sources.</li>
+          <li>Directly targets APUSH themes and historical thinking skills about change over time and causation.</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+    <!-- THEMES -->
+    
+      <section id="themes" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section__title">Themes</h2>
+      <p class="section__tag">APUSH Framework</p>
+    </div>
+
+    <div class="cards themes-grid">
+      <article class="card glass">
+        <h3>WXT — Work, Exchange, and Technology</h3>
+        <p>
+          This theme is central to the project because Bellevue Square grew out of postwar technological and economic
+          change. New bridges, highways, and rising car ownership allowed people to live on the Eastside while working and
+          shopping across the region. My website explores WXT through the interactive timeline and before/after slider,
+          which show how transportation infrastructure and consumer markets turned rural farmland into a regional retail
+          center.
+        </p>
+      </article>
+
+      <article class="card glass">
+        <h3>GEO — Geography & the Environment</h3>
+        <p>
+          Bellevue’s physical geography and environmental reshaping are key to understanding its transformation. Early maps
+          and photographs show open fields and berry farms, many cultivated by Japanese American families before World War II
+          (Snoqualmie Valley Historical Society). On the site, map overlays and images compare the 1930s–1940s landscape with
+          today’s dense urban core, illustrating how roads, bridges, and zoning changed the environment into structured
+          commercial and residential zones.
+        </p>
+      </article>
+
+      <article class="card glass">
+        <h3>ARC — American and Regional Culture</h3>
+        <p>
+          Bellevue Square also reflects changes in American culture: shopping shifted from a purely economic activity to a
+          social and cultural experience. The advertisement gallery and narrative sections of the website show how the mall
+          promoted a particular lifestyle of modern suburbia, family leisure, and seasonal events, connecting Bellevue to
+          national patterns of consumer culture and suburban identity (Cross).
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+       
+
+    <!-- SKILLS -->
+   <section id="skills" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section__title">Historical Thinking Skills</h2>
+    </div>
+
+    <div class="cards skills-grid">
+      <article class="card glass">
+        <h3>Developments &amp; Processes (Skill 1 · 1A &amp; 1B)</h3>
+        <p>
+          The project traces major developments and processes that shaped Bellevue’s transformation: Japanese American
+          farming, wartime removal, the postwar housing boom, highway construction, and the tech-driven urbanization of the
+          late 20th century. The interactive timeline and “From Fields to Skyline” before/after slider visualize these
+          developments over time and help explain how national trends like the GI Bill and car culture reshaped local land use
+          and everyday life (Humes).
+        </p>
+      </article>
+
+      <article class="card glass">
+        <h3>Sourcing &amp; Situation (Skill 2 · 2A &amp; 2C)</h3>
+        <p>
+          The site uses primary sources such as photographs of strawberry farms, wartime notices, early Bellevue Square
+          advertisements, and later redevelopment images. In captions and explanatory text, I identify each source’s creator,
+          intended audience, and historical situation, and I explain how those factors shape the message. This sourcing and
+          contextualization show how different groups from Japanese American farmers to postwar developers, told very
+          different stories about the same land (Densho Encyclopedia; HistoryLink.org).
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+    <!-- NARRATIVE -->
+   <section id="narrative" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section__title">Summary of Narrative</h2>
+    </div>
+
+    <div class="grid-2 narrative-grid">
+      <article class="card glass narrative-main">
+        <p>
+          In the early 1900s, Bellevue’s economy relied heavily on small farms, including Japanese American owned strawberry
+          farms that supplied fruit to markets across the region (Snoqualmie Valley Historical Society). These farms created a
+          rural community centered on land, labor, and family networks.
+        </p>
+        <p>
+          During World War II, Executive Order 9066 forced Japanese American families off their land and into incarceration
+          camps (Densho Encyclopedia). Their property was sold or taken over, clearing the way for new postwar development.
+          This turning point shows how national wartime policy and racism directly altered local land ownership and opened
+          space for future suburban projects.
+        </p>
+        <p>
+          After the war, returning veterans used GI Bill benefits to buy homes, car ownership expanded, and new bridges and
+          highways connected the Eastside to Seattle. In 1946, Bellevue Square opened as an auto oriented suburban shopping
+          center, with large parking lots and modern department stores that reflected postwar consumer culture and the rise of
+          the shopping mall as a “new downtown” (HistoryLink.org).
+        </p>
+        <p>
+          Through the 1960s–1980s, Bellevue Square expanded and enclosed, mirroring national trends toward indoor malls. The
+          site became a social space for families and teenagers as well as a retail hub. By the 1990s and 2000s, the tech boom
+          and companies like Microsoft helped transform Bellevue into a dense “edge city” with office towers, luxury retail,
+          and mixed-use developments surrounding the mall (Garreau).
+        </p>
+        <p>
+          Today, Bellevue Square functions as an “experience hub,” hosting events, dining, and lifestyle-focused spaces in
+          addition to shopping. The website’s narrative shows how this single location reflects broader U.S. themes of
+          suburbanization, economic development, cultural change, and the continuing debate over what community and public
+          space look like in a postwar, car-centered, and increasingly digital society.
+        </p>
+      </article>
+
+      <aside class="card glass narrative-aside">
+        <h3>Phases of Change</h3>
+        <ol class="phase-list">
+          <li><strong>Fields &amp; Farms</strong> — Japanese American strawberry farms anchor Bellevue’s rural economy.</li>
+          <li><strong>Wartime Removal (1942)</strong> — Internment removes families and clears land for new owners.</li>
+          <li><strong>Early Suburban Mall (1946)</strong> — Bellevue Square opens as a car-centered “downtown.”</li>
+          <li><strong>Enclosed Mall Era</strong> — 1970s–80s renovations match national indoor mall trends.</li>
+          <li><strong>Edge City Growth</strong> — 1990s–2000s tech boom densifies the urban core around the mall.</li>
+          <li><strong>Experience Hub</strong> — 2010s–2020s focus on events, branding, and lifestyle-based retail.</li>
+        </ol>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+       
+
+    <!-- TIMELINE -->
+    <section id="timeline" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section__title">Interactive Timeline</h2>
+      <p class="section__tag">Click a year to see what changed</p>
+    </div>
+
+    <div class="timeline-layout">
+      <!-- Horizontal clickable strip -->
+      <div class="timeline-strip-wrapper glass">
+        <div id="timelineStrip" class="timeline-strip">
+          <!-- JS will inject the dots here -->
+        </div>
+      </div>
+
+      <!-- Detail panel -->
+      <aside class="timeline-detail glass" id="timelineDetail">
+        <h3 class="timeline-detail__title">Timeline Details</h3>
+        <p class="timeline-detail__year">Select an event on the left.</p>
+        <p class="timeline-detail__body">
+          As you click through the years, this panel explains why each moment mattered for Bellevue’s
+          transformation and how it connects to bigger U.S. history themes like suburbanization, consumer
+          culture, and urban growth.
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+
+    <!-- CAUSE → EFFECT -->
+        <!-- CAUSE → EFFECT -->
+    <section id="cause-effect" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section__title">Cause → Effect</h2>
+          <p class="section__tag">How National Forces Reshaped One Local Place</p>
+        </div>
+
+        <!-- 01 -->
+        <section class="ce-section">
+          <div class="ce-text card glass">
+            <h3>01 · Postwar Prosperity &amp; Car Culture</h3>
+            <p>
+              After World War II, rising incomes, GI Bill benefits, and mass car ownership pushed families out of city cores
+              and into new suburbs (Humes). Highways and bridges made it normal to drive to work, school, and shopping.
+            </p>
+            <p>
+              Bellevue Square’s design reflects that world: huge parking lots, wide access roads, and store entrances that
+              face the lot instead of a traditional downtown street. The mall exists because everyday life was reorganized
+              around the car (HistoryLink.org).
+            </p>
+          </div>
+
+          <div class="flip">
+            <div class="flip__inner">
+              <figure class="flip__face flip__front glass">
+                <img src="images/parking.jpg" alt="Large parking lots around a mall" />
+                <figcaption>
+                  <strong>Cause:</strong> Suburbanization and car culture encourage planners to build shopping around easy
+                  auto access (Humes).
+                </figcaption>
+              </figure>
+              <figure class="flip__face flip__back glass">
+                <img src="images/mall-front.jpg" alt="Bellevue Square style mall front" />
+                <figcaption>
+                  <strong>Effect:</strong> Bellevue Square opens as a car centered “downtown,” with parking lots acting as
+                  the new town square (HistoryLink.org).
+                </figcaption>
+              </figure>
+            </div>
+            <button class="flip__btn">Flip Card</button>
+          </div>
+        </section>
+
+        <!-- 02 -->
+        <section class="ce-section">
+          <div class="ce-text card glass">
+            <h3>02 · Japanese American Internment &amp; Land Ownership</h3>
+            <p>
+              Before WWII, Japanese American farmers grew strawberries and other crops across the Eastside and built tight
+              community networks (SVHS; Densho). In 1942, Executive Order 9066 forced them into incarceration camps, and
+              their land was sold or taken over (Daniels).
+            </p>
+            <p>
+              These removals cleared the way for postwar developers. The land that once supported farming families became
+              subdivisions and, eventually, the commercial land under and around Bellevue Square.
+            </p>
+          </div>
+
+          <div class="flip">
+            <div class="flip__inner">
+              <figure class="flip__face flip__front glass">
+                <img src="images/internment-notice.jpg" alt="Japanese American internment removal notice" />
+                <figcaption>
+                  <strong>Cause:</strong> Federal internment policy forces Japanese American families to leave their farms,
+                  often losing property and income (Densho; Daniels).
+                </figcaption>
+              </figure>
+              <figure class="flip__face flip__back glass">
+                <img src="images/farm-rows.jpg" alt="Rows of crops on a farm field" />
+                <figcaption>
+                  <strong>Effect:</strong> Former farm land is resold and later redeveloped into suburban housing and the
+                  commercial land base for Bellevue Square.
+                </figcaption>
+              </figure>
+            </div>
+            <button class="flip__btn">Flip Card</button>
+          </div>
+        </section>
+
+        <!-- 03 -->
+        <section class="ce-section">
+          <div class="ce-text card glass">
+            <h3>03 · Highways, Bridges &amp; Regional Growth</h3>
+            <p>
+              Floating bridges and interstate highways connected the Eastside to Seattle and the broader Puget Sound region
+              (Seattle Times). Suddenly, Bellevue was no longer an edge of farmland—it was part of a daily commute network.
+            </p>
+            <p>
+              With better access, Bellevue became attractive for businesses and shoppers. Bellevue Square grew into a
+              regional mall that served not just locals but visitors from across the area.
+            </p>
+          </div>
+
+          <div class="flip">
+            <div class="flip__inner">
+              <figure class="flip__face flip__front glass">
+                <img src="images/bridge.jpg" alt="Bridge connecting the Eastside to Seattle" />
+                <figcaption>
+                  <strong>Cause:</strong> New bridges and interstates shorten travel times between Seattle and Bellevue.
+                </figcaption>
+              </figure>
+              <figure class="flip__face flip__back glass">
+                <img src="images/retail-core.jpg" alt="Modern retail and office core" />
+                <figcaption>
+                  <strong>Effect:</strong> Bellevue grows into a regional retail and job center, with Bellevue Square as a
+                  major anchor (Garreau).
+                </figcaption>
+              </figure>
+            </div>
+            <button class="flip__btn">Flip Card</button>
+          </div>
+        </section>
+
+        <!-- 04 -->
+        <section class="ce-section">
+          <div class="ce-text card glass">
+            <h3>04 · Tech Boom &amp; Rising Affluence</h3>
+            <p>
+              In the 1980s–1990s, tech companies like Microsoft drew thousands of high paying jobs to the Eastside. Office
+              parks and corporate campuses appeared within driving distance of Bellevue Square.
+            </p>
+            <p>
+              As incomes rose, the mall shifted toward highe -end brands, polished interiors, and hotel and restaurant
+              partnerships, turning “The Bellevue Collection” into a symbol of upscale suburban affluence.
+            </p>
+          </div>
+
+          <div class="flip">
+            <div class="flip__inner">
+              <figure class="flip__face flip__front glass">
+                <img src="images/tech-campus.jpg" alt="Tech campus style office buildings" />
+                <figcaption>
+                  <strong>Cause:</strong> Tech companies cluster on the Eastside, bringing in new wealth and workers.
+                </figcaption>
+              </figure>
+              <figure class="flip__face flip__back glass">
+                <img src="images/luxury-mall.jpg" alt="Interior of a modern luxury mall" />
+                <figcaption>
+                  <strong>Effect:</strong> Bellevue Square upgrades into a luxury oriented destination with hotels, fine
+                  dining, and premium retail.
+                </figcaption>
+              </figure>
+            </div>
+            <button class="flip__btn">Flip Card</button>
+          </div>
+        </section>
+
+        <!-- 05 -->
+        <section class="ce-section">
+          <div class="ce-text card glass">
+            <h3>05 · Zoning, Density &amp; the “Urban Village”</h3>
+            <p>
+              City planners used zoning changes and development incentives to push more housing and offices into the
+              downtown core. Instead of endless sprawl, Bellevue started building upward with mixed use towers.
+            </p>
+            <p>
+              Around Bellevue Square, this meant new condos, hotels, and office towers directly attached to the mall, turning
+              it into the center of an urban village rather than a stand-alone shopping center.
+            </p>
+          </div>
+
+          <div class="flip">
+            <div class="flip__inner">
+              <figure class="flip__face flip__front glass">
+                <img src="images/zoning-map.jpg" alt="Zoning map with colored districts" />
+                <figcaption>
+                  <strong>Cause:</strong> Zoning decisions and city planning encourage dense, mixed use development in the
+                  downtown core.
+                </figcaption>
+              </figure>
+              <figure class="flip__face flip__back glass">
+                <img src="images/mixed-use-street.jpg" alt="Street with shops and apartments above" />
+                <figcaption>
+                  <strong>Effect:</strong> Bellevue Square sits inside a walkable cluster of housing, offices, and retail,
+                  forming a modern “urban village.”
+                </figcaption>
+              </figure>
+            </div>
+            <button class="flip__btn">Flip Card</button>
+          </div>
+        </section>
+
+        <!-- 06 -->
+        <section class="ce-section">
+          <div class="ce-text card glass">
+            <h3>06 · Online Shopping &amp; the Experience Economy</h3>
+            <p>
+              As online shopping grew in the 2000s–2010s, traditional malls risked losing customers who could buy almost
+              anything from home. To stay relevant, many centers shifted toward experiences rather than just products.
+            </p>
+            <p>
+              Bellevue Square responded by hosting seasonal events, pop-up installations, and interactive displays, turning
+              in person visits into something that feels social and memorable instead of just transactional.
+            </p>
+          </div>
+
+          <div class="flip">
+            <div class="flip__inner">
+              <figure class="flip__face flip__front glass">
+                <img src="images/online-shopping.jpg" alt="Person shopping online on a laptop" />
+                <figcaption>
+                  <strong>Cause:</strong> E commerce makes it possible to buy clothes, electronics, and gifts without going
+                  to the mall.
+                </figcaption>
+              </figure>
+              <figure class="flip__face flip__back glass">
+                <img src="images/mall-event.jpg" alt="Crowd at an event inside a mall" />
+                <figcaption>
+                  <strong>Effect:</strong> Bellevue Square leans into events, holiday celebrations, and lifestyle branding to
+                  attract visitors seeking experiences.
+                </figcaption>
+              </figure>
+            </div>
+            <button class="flip__btn">Flip Card</button>
+          </div>
+        </section>
+      </div>
+    </section>
+ <!-- PRIMARY SOURCE EXPLORER -->
+    <section id="sources" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section__title">Primary Source Explorer</h2>
+          <p class="section__tag">Reading the Evidence</p>
+        </div>
+
+        <div class="source-grid">
+          <article class="card glass source-card" data-modal-open="src-farms">
+            <img src="images/farm-rows.jpg" alt="Japanese American strawberry farm rows" />
+            <h3>Strawberry Farm Photograph</h3>
+            <p>c. 1930s · Snoqualmie Valley Historical Society</p>
+          </article>
+
+          <article class="card glass source-card" data-modal-open="src-notice">
+            <img src="images/internment-notice.jpg" alt="Japanese American removal notice" />
+            <h3>Internment Removal Notice</h3>
+            <p>1942 · U.S. Army · Executive Order 9066</p>
+          </article>
+
+          <article class="card glass source-card" data-modal-open="src-ad">
+            <img src="images/mall-front.jpg" alt="Early Bellevue Square promotional image" />
+            <h3>Bellevue Square Opening Ad</h3>
+            <p>1946 · Local Newspaper Advertisement</p>
+          </article>
+
+          <article class="card glass source-card" data-modal-open="src-zoning">
+            <img src="images/zoning-map.jpg" alt="Bellevue zoning or planning map" />
+            <h3>Downtown Zoning &amp; Growth Plan</h3>
+            <p>Late 20th c. · City of Bellevue</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS FOR PRIMARY SOURCES -->
+    <div class="modal" data-modal="src-farms">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__content glass">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <img src="images/farm-rows.jpg" alt="Japanese American strawberry farm rows" />
+        <p class="modal__meta">Photograph · c. 1930s · Snoqualmie Valley Historical Society (SVHS, 2020)</p>
+        <p>
+          This photograph shows rows of strawberry plants on a Japanese American operated farm on the Eastside. It illustrates
+          how agriculture shaped Bellevue’s early economy and how much labor and land were invested before suburban development.
+          In the project, it supports the claim that Bellevue’s “origin story” is rural and immigrant-based, not purely suburban.
+        </p>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="src-notice">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__content glass">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <img src="images/internment-notice.jpg" alt="Japanese American removal notice" />
+        <p class="modal__meta">Public Notice · 1942 · U.S. Army, Western Defense Command (Densho; Daniels)</p>
+        <p>
+          This removal notice ordered Japanese Americans to leave their homes and report for “relocation.” It demonstrates how
+          federal wartime policy directly disrupted communities on the Eastside. In the narrative, it supports the argument that
+          internment cleared land for later suburban and commercial redevelopment.
+        </p>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="src-ad">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__content glass">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <img src="images/mall-front.jpg" alt="Bellevue Square early promotional image" />
+        <p class="modal__meta">Advertisement · 1946 · Bellevue Square Opening (HistoryLink.org; Seattle Times)</p>
+        <p>
+          This early image or ad frames Bellevue Square as a symbol of “modern living,” with cars, bright signage, and new
+          department stores. It reveals how developers marketed the mall as a futuristic, convenient alternative to older
+          downtowns, supporting the WXT and ARC themes about technology, consumerism, and identity.
+        </p>
+      </div>
+    </div>
+
+    <div class="modal" data-modal="src-zoning">
+      <div class="modal__backdrop" data-modal-close></div>
+      <div class="modal__content glass">
+        <button class="modal__close" data-modal-close>&times;</button>
+        <img src="images/zoning-map.jpg" alt="Bellevue zoning map" />
+        <p class="modal__meta">Zoning / Planning Map · City of Bellevue</p>
+        <p>
+          This zoning style map highlights areas designated for commercial, residential, and mixed use development. It helps
+          explain how policy not just the free market guided where towers, housing, and retail could grow. It supports the claim
+          that Bellevue’s transformation into an “urban village” around the mall was carefully planned rather than accidental.
+        </p>
+      </div>
+    </div>
+
+    <!-- EASTSIDE WORLD-BUILDING -->
+    <section id="worldbuilding" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section__title">Eastside World-Building</h2>
+          <p class="section__tag">What If History Went Differently?</p>
+        </div>
+
+        <div class="world-layout">
+          <article class="card glass">
+            <h3>Imagining Another Bellevue</h3>
+            <p>
+              This section uses counterfactual history to ask: What might Bellevue look like today if Japanese American farmers
+              had not been removed during World War II and had kept control of their land?
+            </p>
+            <p>
+              Comparing the “actual timeline” with an imagined alternate version helps highlight how policy choices and power
+              imbalances shaped the city’s geography, economy, and culture.
+            </p>
+
+            <div class="world-tabs">
+              <button class="world-tab is-active" data-world-tab="actual">Actual Timeline</button>
+              <button class="world-tab" data-world-tab="alternate">Alternate Timeline</button>
+              <button class="world-tab" data-world-tab="reflection">Why It Matters</button>
+            </div>
+          </article>
+
+          <div class="world-panels">
+            <article class="card glass world-panel is-active" data-world-panel="actual">
+              <h3>Actual Timeline: From Farms to Mall</h3>
+              <p>
+                In the real timeline, Japanese American farmers on the Eastside were removed under Executive Order 9066. Their
+                land was sold or taken over, and after the war, developers used those parcels along with new infrastructure and
+                zoning to build subdivisions and eventually Bellevue Square and its surrounding retail core (Densho;
+                HistoryLink.org).
+              </p>
+              <p>
+                Bellevue became a classic postwar suburb and then an “edge city,” with the mall and nearby office towers
+                symbolizing prosperity, consumption, and high tech growth.
+              </p>
+            </article>
+
+            <article class="card glass world-panel" data-world-panel="alternate">
+              <h3>Alternate Timeline: Farming City with a Different Center</h3>
+              <p>
+                In an alternate version of history, Japanese American families return from the war and reclaim or keep their land.
+                Instead of being converted quickly into suburban tracts, large portions of the Eastside remain in small scale
+                agriculture and family run food businesses.
+              </p>
+              <p>
+                Bellevue might still develop a commercial center, but it could revolve around a public market, farm co-ops, and
+                agricultural festivals rather than a car-oriented enclosed mall. The skyline might be lower, and local food
+                economies and cultural traditions would stay more visible in the built environment.
+              </p>
+            </article>
+
+            <article class="card glass world-panel" data-world-panel="reflection">
+              <h3>Why This “What If?” Matters</h3>
+              <p>
+                Counterfactuals are not about pretending we can rewrite the past; they help reveal how much of the present is the
+                result of specific choices and power structures. Imagining a Bellevue where Japanese American farmers kept their
+                land makes it easier to see what was lost—not just property, but community networks, traditions, and alternative
+                futures for the city’s development.
+              </p>
+              <p>
+                This reflection connects back to the project’s main question: Bellevue Square’s story is not just about one mall.
+                It is about whose stories became central, whose were pushed aside, and how geography, race, and policy interacted
+                to shape the Eastside we see today.
+              </p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section id="refs" class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section__title">References</h2>
+    </div>
+
+    <div class="glass card">
+      <p style="font-size:0.9rem; margin-bottom:0.6rem;">
+        Evidence from these primary and secondary sources is woven throughout the narrative, timeline, and visual sections of
+        the site. Each citation directly supports claims about land use, suburbanization, consumer culture, and Bellevue’s
+        long-term development.
+      </p>
+
+      <ul class="list refs-list">
+        <li>
+          <strong>Cross, Gary.</strong>
+          <em>An All-Consuming Century: Why Commercialism Won in Modern America</em>.
+          Columbia University Press, 2000.
+        </li>
+
+        <li>
+          <strong>Daniels, Roger.</strong>
+          <em>Prisoners Without Trial: Japanese Americans in World War II</em>.
+          Hill and Wang, 2004.
+        </li>
+
+        <li>
+          <strong>Densho Encyclopedia.</strong>
+          “Japanese American Farms on the Eastside.”
+          Densho, 2019.
+          <a href="https://encyclopedia.densho.org" target="_blank" rel="noopener noreferrer">
+            https://encyclopedia.densho.org
+          </a>.
+        </li>
+
+        <li>
+          <strong>Garreau, Joel.</strong>
+          <em>Edge City: Life on the New Frontier</em>.
+          Anchor Books, 1991.
+        </li>
+
+        <li>
+          <strong>HistoryLink.org.</strong>
+          “Bellevue Square Shopping Center Opens in Bellevue in 1946.” Essay no. 7523, 2015.
+          <a href="https://www.historylink.org" target="_blank" rel="noopener noreferrer">
+            https://www.historylink.org
+          </a>.
+        </li>
+
+        <li>
+          <strong>Humes, Edward.</strong>
+          <em>Over Here: How the G.I. Bill Transformed the American Dream</em>.
+          Harcourt, 2006.
+        </li>
+
+        <li>
+          <strong>Snoqualmie Valley Historical Society.</strong>
+          “Strawberry Farms and Japanese American Growers on the Eastside.”
+          SVHS, 2020.
+          <a href="https://www.snoqualmievalleymuseum.org" target="_blank" rel="noopener noreferrer">
+            https://www.snoqualmievalleymuseum.org
+          </a>.
+        </li>
+
+        <li>
+          <strong>“Suburban Growth on Seattle’s Eastside.”</strong>
+          <em>The Seattle Times</em>, 12 Aug. 1956.
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer glass">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Bellevue Square — Real History Project</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

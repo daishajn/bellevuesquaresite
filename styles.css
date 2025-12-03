@@ -1,0 +1,713 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2867
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 /* ===== Root theme variables ===== */\
+:root \{\
+  --bg: #050816;\
+  --fg: #e5ecff;\
+  --muted: #a5b0cb;\
+  --card: rgba(15, 23, 42, 0.9);\
+  --glass: rgba(15, 23, 42, 0.85);\
+  --border: rgba(148, 163, 184, 0.38);\
+  --accent: #60a5fa;\
+  --accent-2: #a855f7;\
+  --shadow: 0 18px 40px rgba(0, 0, 0, 0.6);\
+\}\
+\
+html[data-theme="light"] \{\
+  --bg: #f5f7ff;\
+  --fg: #020617;\
+  --muted: #4b5563;\
+  --card: rgba(255, 255, 255, 0.98);\
+  --glass: rgba(255, 255, 255, 0.92);\
+  --border: rgba(148, 163, 184, 0.4);\
+  --accent: #2563eb;\
+  --accent-2: #7c3aed;\
+  --shadow: 0 16px 35px rgba(15, 23, 42, 0.15);\
+\}\
+\
+/* ===== Base ===== */\
+*,\
+*::before,\
+*::after \{\
+  box-sizing: border-box;\
+\}\
+\
+html,\
+body \{\
+  height: 100%;\
+\}\
+\
+body \{\
+  margin: 0;\
+  font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;\
+  background:\
+    radial-gradient(900px 500px at 0% 0%, #1e293b 0%, transparent 60%),\
+    radial-gradient(900px 500px at 100% 0%, #0f172a 0%, transparent 60%),\
+    linear-gradient(180deg, #020617 0%, #020617 60%, #020617 100%);\
+  color: var(--fg);\
+\}\
+\
+/* Background blobs */\
+.bg-blobs \{\
+  position: fixed;\
+  inset: -30vh -20vw auto;\
+  pointer-events: none;\
+  z-index: -1;\
+  filter: blur(70px);\
+\}\
+.blob \{\
+  position: absolute;\
+  border-radius: 999px;\
+  opacity: 0.7;\
+  mix-blend-mode: screen;\
+\}\
+.b1 \{\
+  width: 38vw;\
+  height: 38vw;\
+  left: 5vw;\
+  top: -10vh;\
+  background: radial-gradient(circle at 30% 30%, #1d4ed8, transparent 60%);\
+\}\
+.b2 \{\
+  width: 30vw;\
+  height: 30vw;\
+  right: 0;\
+  top: 10vh;\
+  background: radial-gradient(circle at 40% 40%, #7c3aed, transparent 60%);\
+\}\
+.b3 \{\
+  width: 30vw;\
+  height: 30vw;\
+  left: 45vw;\
+  top: 45vh;\
+  background: radial-gradient(circle at 50% 50%, #16a34a, transparent 60%);\
+\}\
+\
+/* Utility */\
+.container \{\
+  max-width: 1120px;\
+  margin: 0 auto;\
+  padding: 0 20px;\
+\}\
+.section \{\
+  padding: clamp(54px, 8vw, 96px) 0;\
+\}\
+.section-header \{\
+  display: flex;\
+  justify-content: space-between;\
+  align-items: flex-end;\
+  gap: 12px;\
+  margin-bottom: 18px;\
+  flex-wrap: wrap;\
+\}\
+.section__title \{\
+  margin: 0;\
+  font-family: "Playfair Display", serif;\
+  font-size: clamp(24px, 3.2vw, 34px);\
+  letter-spacing: 0.3px;\
+\}\
+.section__tag \{\
+  margin: 0;\
+  font-size: 13px;\
+  text-transform: uppercase;\
+  letter-spacing: 0.2em;\
+  color: var(--muted);\
+\}\
+.glass \{\
+  background: var(--glass);\
+  border-radius: 22px;\
+  border: 1px solid var(--border);\
+  box-shadow: var(--shadow);\
+  backdrop-filter: blur(16px) saturate(140%);\
+\}\
+.card \{\
+  padding: 18px 18px 20px;\
+\}\
+\
+/* Text */\
+.lead \{\
+  color: var(--muted);\
+  font-size: clamp(15px, 1.7vw, 18px);\
+  margin: 10px 0 18px;\
+\}\
+.muted \{\
+  color: var(--muted);\
+  font-size: 14px;\
+\}\
+.cite \{\
+  opacity: 0.85;\
+\}\
+\
+/* Header / Nav */\
+.header \{\
+  position: sticky;\
+  top: 10px;\
+  z-index: 40;\
+  margin: 10px;\
+\}\
+.header__inner \{\
+  display: flex;\
+  align-items: center;\
+  gap: 16px;\
+  padding: 10px 14px;\
+\}\
+.brand \{\
+  display: flex;\
+  align-items: center;\
+  gap: 10px;\
+  text-decoration: none;\
+  color: inherit;\
+\}\
+.brand__dot \{\
+  width: 10px;\
+  height: 10px;\
+  border-radius: 999px;\
+  background: conic-gradient(from 0deg, var(--accent), var(--accent-2));\
+  box-shadow: 0 0 16px rgba(96, 165, 250, 0.9);\
+  animation: pulse 1.8s infinite ease-in-out;\
+\}\
+.brand__text \{\
+  display: flex;\
+  flex-direction: column;\
+\}\
+.brand__title \{\
+  font-weight: 700;\
+  letter-spacing: 0.2px;\
+\}\
+.brand__subtitle \{\
+  font-size: 12px;\
+  color: var(--muted);\
+\}\
+.nav \{\
+  margin-left: auto;\
+  display: flex;\
+  align-items: center;\
+  gap: 10px;\
+  flex-wrap: wrap;\
+\}\
+.nav a \{\
+  font-size: 13px;\
+  text-decoration: none;\
+  color: var(--fg);\
+  opacity: 0.92;\
+  border-bottom: 1px solid transparent;\
+  padding-bottom: 2px;\
+\}\
+.nav a:hover \{\
+  border-color: var(--accent);\
+\}\
+.btn,\
+.btn-outline,\
+.btn-ghost \{\
+  font-size: 13px;\
+  font-weight: 600;\
+  padding: 8px 13px;\
+  border-radius: 999px;\
+  border: 1px solid var(--border);\
+  cursor: pointer;\
+  transition: background 0.18s ease, transform 0.16s ease, box-shadow 0.18s ease;\
+\}\
+.btn \{\
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));\
+  color: #fff;\
+  border-color: transparent;\
+\}\
+.btn:hover \{\
+  transform: translateY(-1px);\
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.5);\
+\}\
+.btn-outline \{\
+  background: transparent;\
+  color: var(--fg);\
+\}\
+.btn-outline:hover \{\
+  background: rgba(255, 255, 255, 0.06);\
+\}\
+.btn-ghost \{\
+  background: transparent;\
+  color: var(--fg);\
+\}\
+.btn-ghost:hover \{\
+  background: rgba(255, 255, 255, 0.06);\
+\}\
+\
+/* Hero */\
+.hero .container \{\
+  padding: clamp(18px, 2.6vw, 26px);\
+\}\
+.hero__grid \{\
+  display: grid;\
+  gap: clamp(16px, 3vw, 24px);\
+  align-items: center;\
+\}\
+@media (min-width: 960px) \{\
+  .hero__grid \{\
+    grid-template-columns: 1.15fr 1fr;\
+  \}\
+\}\
+h1 \{\
+  margin: 4px 0 8px;\
+  line-height: 1.04;\
+\}\
+h1 .serif \{\
+  font-family: "Playfair Display", serif;\
+  font-size: clamp(26px, 4.5vw, 44px);\
+  display: block;\
+\}\
+h1 .sans \{\
+  font-size: clamp(22px, 3.4vw, 34px);\
+  font-weight: 700;\
+  display: block;\
+  letter-spacing: 0.3px;\
+\}\
+.hero__actions \{\
+  display: flex;\
+  gap: 10px;\
+  flex-wrap: wrap;\
+  margin-bottom: 14px;\
+\}\
+.hero-facts \{\
+  margin: 0;\
+  display: grid;\
+  grid-template-columns: repeat(3, minmax(0, 1fr));\
+  gap: 10px;\
+  font-size: 12px;\
+\}\
+.hero-facts dt \{\
+  text-transform: uppercase;\
+  letter-spacing: 0.16em;\
+  color: var(--muted);\
+\}\
+.hero-facts dd \{\
+  margin: 2px 0 0;\
+\}\
+\
+/* Before/after */\
+.before-after \{\
+  position: relative;\
+  height: clamp(260px, 34vw, 360px);\
+  border-radius: 22px;\
+  overflow: hidden;\
+\}\
+.before-after img \{\
+  width: 100%;\
+  height: 100%;\
+  object-fit: cover;\
+  display: block;\
+\}\
+.before-after__clip \{\
+  position: absolute;\
+  inset: 0;\
+  width: 50%;\
+  overflow: hidden;\
+  box-shadow: inset -18px 0 40px rgba(0, 0, 0, 0.45);\
+\}\
+.before-after__range \{\
+  position: absolute;\
+  left: 50%;\
+  bottom: 14px;\
+  transform: translateX(-50%);\
+  width: 70%;\
+  appearance: none;\
+  background: transparent;\
+\}\
+.before-after__range::-webkit-slider-thumb \{\
+  -webkit-appearance: none;\
+  width: 18px;\
+  height: 18px;\
+  border-radius: 999px;\
+  background: #ffffff;\
+  border: 2px solid #020617;\
+  box-shadow: 0 0 0 5px rgba(148, 163, 184, 0.6);\
+\}\
+.before-after__range::-webkit-slider-runnable-track \{\
+  height: 3px;\
+  background: rgba(248, 250, 252, 0.6);\
+  border-radius: 999px;\
+\}\
+.before-after__label \{\
+  position: absolute;\
+  top: 10px;\
+  padding: 5px 10px;\
+  font-size: 11px;\
+  border-radius: 999px;\
+  color: #f9fafb;\
+  background: rgba(15, 23, 42, 0.65);\
+  border: 1px solid rgba(148, 163, 184, 0.6);\
+\}\
+.before-after__label.before \{\
+  left: 10px;\
+\}\
+.before-after__label.after \{\
+  right: 10px;\
+\}\
+.tilt \{\
+  transform-style: preserve-3d;\
+  transition: transform 0.2s ease;\
+\}\
+.tilt:hover \{\
+  transform: perspective(900px) rotateX(2deg) rotateY(-2deg) translateY(-2px);\
+\}\
+.scroll-indicator \{\
+  text-align: center;\
+  margin-top: 12px;\
+  font-size: 11px;\
+  color: var(--muted);\
+  letter-spacing: 0.25em;\
+  text-transform: uppercase;\
+\}\
+.scroll-indicator span \{\
+  display: inline-block;\
+  width: 6px;\
+  height: 6px;\
+  margin-right: 10px;\
+  border-radius: 999px;\
+  background: var(--accent);\
+  animation: bounce 1.3s infinite;\
+\}\
+\
+/* RQ section */\
+.grid-2 \{\
+  display: grid;\
+  gap: 14px;\
+\}\
+@media (min-width: 900px) \{\
+  .grid-2 \{\
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);\
+  \}\
+\}\
+.rq-card \{\
+  position: relative;\
+\}\
+.rq-card--notes \{\
+  background: radial-gradient(circle at 0 0, rgba(249, 250, 251, 0.07), transparent 50%), var(--glass);\
+\}\
+.rq-label \{\
+  font-size: 12px;\
+  text-transform: uppercase;\
+  letter-spacing: 0.18em;\
+  color: var(--muted);\
+  margin-bottom: 4px;\
+\}\
+.rq-text \{\
+  font-size: 15px;\
+\}\
+.rq-list \{\
+  padding-left: 18px;\
+  margin: 4px 0 0;\
+  font-size: 14px;\
+\}\
+.rq-list li + li \{\
+  margin-top: 4px;\
+\}\
+\
+/* Themes + skills */\
+.cards \{\
+  display: grid;\
+  gap: 16px;\
+\}\
+@media (min-width: 960px) \{\
+  .themes-grid \{\
+    grid-template-columns: repeat(3, minmax(0, 1fr));\
+  \}\
+  .skills-grid \{\
+    grid-template-columns: repeat(2, minmax(0, 1fr));\
+  \}\
+\}\
+\
+/* Narrative */\
+.narrative-grid \{\
+  gap: 16px;\
+\}\
+@media (min-width: 960px) \{\
+  .narrative-grid \{\
+    grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.3fr);\
+  \}\
+\}\
+.narrative-main p + p \{\
+  margin-top: 10px;\
+\}\
+.phase-list \{\
+  list-style: none;\
+  padding-left: 0;\
+  margin: 0 0 14px;\
+  font-size: 14px;\
+\}\
+.phase-list li + li \{\
+  margin-top: 8px;\
+\}\
+.phase-list strong \{\
+  display: block;\
+\}\
+.callout \{\
+  margin-top: 8px;\
+  padding: 10px 12px;\
+  border-radius: 14px;\
+  background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.1), transparent 60%);\
+  border: 1px dashed var(--border);\
+\}\
+.callout h4 \{\
+  margin: 0 0 4px;\
+  font-size: 13px;\
+\}\
+\
+/* Timeline */\
+.timeline \{\
+  position: relative;\
+  list-style: none;\
+  padding-left: 26px;\
+  margin: 22px 0 10px;\
+\}\
+.timeline::before \{\
+  content: "";\
+  position: absolute;\
+  left: 6px;\
+  top: 0;\
+  bottom: 0;\
+  width: 3px;\
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));\
+  border-radius: 999px;\
+  opacity: 0.7;\
+\}\
+.timeline__dot \{\
+  position: absolute;\
+  left: -1px;\
+  width: 15px;\
+  height: 15px;\
+  border-radius: 999px;\
+  background: conic-gradient(from 0deg, var(--accent), var(--accent-2));\
+  transform: translateY(8px);\
+  box-shadow:\
+    0 0 12px rgba(96, 165, 250, 0.9),\
+    0 0 0 4px rgba(15, 23, 42, 0.95);\
+\}\
+.tl-item \{\
+  position: relative;\
+  margin: 18px 0;\
+\}\
+.tl-card \{\
+  border-radius: 18px;\
+  padding: 14px 14px 16px;\
+  background: var(--card);\
+  border: 1px solid var(--border);\
+\}\
+.tl-header \{\
+  display: flex;\
+  justify-content: space-between;\
+  gap: 8px;\
+  align-items: baseline;\
+  margin-bottom: 4px;\
+\}\
+.tl-year \{\
+  font-weight: 700;\
+  font-size: 14px;\
+  letter-spacing: 0.16em;\
+  text-transform: uppercase;\
+\}\
+.tl-tag \{\
+  font-size: 11px;\
+  color: var(--muted);\
+\}\
+.tl-text \{\
+  font-size: 14px;\
+\}\
+.tl-media \{\
+  margin-top: 10px;\
+  border-radius: 14px;\
+  overflow: hidden;\
+  border: 1px solid var(--border);\
+\}\
+.tl-media img \{\
+  width: 100%;\
+  height: clamp(190px, 26vw, 230px);\
+  object-fit: cover;\
+  display: block;\
+\}\
+.tl-caption \{\
+  padding: 6px 9px 8px;\
+  font-size: 12px;\
+  color: var(--muted);\
+\}\
+.sentinel \{\
+  text-align: center;\
+  font-size: 13px;\
+  color: var(--muted);\
+  padding: 12px 0 0;\
+\}\
+\
+/* References */\
+.list \{\
+  padding: 14px 16px;\
+  border-radius: 18px;\
+\}\
+.refs-list \{\
+  list-style: none;\
+  margin: 0;\
+  font-size: 14px;\
+\}\
+.refs-list li + li \{\
+  margin-top: 10px;\
+\}\
+.refs-list a \{\
+  margin-left: 8px;\
+  font-size: 13px;\
+  color: var(--accent);\
+  text-decoration: none;\
+\}\
+.refs-list a:hover \{\
+  text-decoration: underline;\
+\}\
+.refs-note \{\
+  margin-top: 8px;\
+\}\
+\
+/* Flip cards */\
+.ce-section \{\
+  margin: 26px 0 32px;\
+\}\
+.ce-title \{\
+  margin: 0 0 10px;\
+  font-size: clamp(16px, 2vw, 18px);\
+  font-weight: 800;\
+\}\
+.flip \{\
+  position: relative;\
+  width: 100%;\
+  max-width: 900px;\
+  aspect-ratio: 16 / 9;\
+  margin: 8px 0;\
+  border-radius: 22px;\
+  perspective: 1200px;\
+  outline: none;\
+\}\
+.flip__inner \{\
+  position: relative;\
+  width: 100%;\
+  height: 100%;\
+  transform-style: preserve-3d;\
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);\
+  border-radius: 22px;\
+\}\
+.flip__face \{\
+  position: absolute;\
+  inset: 0;\
+  backface-visibility: hidden;\
+  border-radius: 22px;\
+  overflow: hidden;\
+  display: grid;\
+  grid-template-rows: 1fr auto;\
+  background: var(--card);\
+  border: 1px solid var(--border);\
+  box-shadow: var(--shadow);\
+\}\
+.flip__face img \{\
+  width: 100%;\
+  height: 100%;\
+  object-fit: cover;\
+\}\
+.flip__face figcaption \{\
+  padding: 10px 12px;\
+  font-size: 14px;\
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.9));\
+  border-top: 1px solid rgba(148, 163, 184, 0.5);\
+\}\
+.flip__front \{\
+  transform: rotateY(0deg);\
+\}\
+.flip__back \{\
+  transform: rotateY(180deg);\
+\}\
+.flip.is-flipped .flip__inner \{\
+  transform: rotateY(180deg);\
+\}\
+.flip__btn \{\
+  position: absolute;\
+  right: 14px;\
+  bottom: 14px;\
+  z-index: 3;\
+  padding: 7px 12px;\
+  border-radius: 999px;\
+  border: 1px solid var(--border);\
+  background: rgba(15, 23, 42, 0.75);\
+  color: var(--fg);\
+  font-size: 13px;\
+  font-weight: 700;\
+  cursor: pointer;\
+  backdrop-filter: blur(8px) saturate(140%);\
+\}\
+.flip__btn:hover \{\
+  background: rgba(15, 23, 42, 0.9);\
+\}\
+.flip:focus-visible,\
+.flip__btn:focus-visible \{\
+  outline: 2px solid var(--accent);\
+  outline-offset: 3px;\
+\}\
+\
+/* Reveal on scroll */\
+.reveal \{\
+  opacity: 0;\
+  transform: translateY(14px);\
+  transition: opacity 0.7s ease, transform 0.7s ease;\
+\}\
+.reveal.show \{\
+  opacity: 1;\
+  transform: translateY(0);\
+\}\
+\
+/* Footer */\
+.footer \{\
+  margin: 10px;\
+  margin-top: 0;\
+\}\
+.footer__inner \{\
+  display: flex;\
+  justify-content: space-between;\
+  align-items: center;\
+  gap: 8px;\
+  padding: 8px 14px;\
+  flex-wrap: wrap;\
+\}\
+\
+/* Animations */\
+@keyframes pulse \{\
+  0%,\
+  100% \{\
+    transform: scale(0.85);\
+    opacity: 0.7;\
+  \}\
+  50% \{\
+    transform: scale(1.1);\
+    opacity: 1;\
+  \}\
+\}\
+@keyframes bounce \{\
+  0%,\
+  100% \{\
+    transform: translateY(0);\
+  \}\
+  50% \{\
+    transform: translateY(6px);\
+  \}\
+\}\
+\
+/* Reduced motion */\
+@media (prefers-reduced-motion: reduce) \{\
+  *,\
+  *::before,\
+  *::after \{\
+    scroll-behavior: auto !important;\
+    animation-duration: 0.01ms !important;\
+    animation-iteration-count: 1 !important;\
+    transition-duration: 0.01ms !important;\
+  \}\
+  .flip__inner \{\
+    transition: none;\
+  \}\
+\}\
+}
